@@ -18,27 +18,7 @@ This project sets up a complete **log observability pipeline** using open-source
 - 🚀 **Dockerized stack** ready for production
 - 🔁 **CI/CD pipeline** using GitHub Actions
 
----
 
-## 📐 Architecture Diagram
-
-┌────────┐ OTLP ┌────────────────────┐ Push ┌────────────┐
-│ Source │ ───────────→ │ OTEL Collector │ ─────────────→ │ Loki │
-│ (Logs) │ │ (Receivers + Exporter) │ (Storage) │
-└────────┘ └────────────────────┘ └────────────┘
-│
-│
-▼
-┌────────────┐
-│ Grafana │
-│ (Dashboard)│
-└────────────┘
-
-yaml
-Copy
-Edit
-
----
 
 ## 📁 Folder Structure
 
@@ -146,11 +126,4 @@ Maintained by Codebruh-sudo
 yaml
 Copy
 Edit
-
----
-
-Let me know if you'd like me to:
-
-- Add a sample log file
-- Generate the actual `.yml` dashboard loader config
-- Customize the CI/CD pipeline in `deploy.yml`
+.
