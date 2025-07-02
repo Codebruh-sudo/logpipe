@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Log Observability Dashboard",
+    "timezone": "browser",
+    "panels": [
+      {
+        "type": "logs",
+        "title": "Logs Explorer",
+        "targets": [
+          {
+            "expr": "{app=\"otel-collector\"}",
+            "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 24, "h": 15 }
+      }
+    ],
+    "templating": {
+      "list": [
+        {
+          "name": "severity_text",
+          "type": "query",
+          "datasource": "Loki",
+          "query": "label_values(severity_text)",
+          "refresh": 1
+        },
+        {
+          "name": "instrumentation_scope",
+          "type": "query",
+          "datasource": "Loki",
+          "query": "label_values(instrumentation_scope)",
+          "refresh": 1
+        },
+        {
+          "name": "observed_timestamp_rfc3339",
+          "type": "query",
+          "datasource": "Loki",
+          "query": "label_values(observed_timestamp_rfc3339)",
+          "refresh": 1
+        }
+      ]
+    },
+    "schemaVersion": 38,
+    "version": 1,
+    "refresh": "10s"
+  }
+}
